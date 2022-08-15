@@ -1,5 +1,5 @@
 # Problem Set 2, hangman.py
-# Name: 
+# Name: KB1LQC
 # Collaborators:
 # Time spent:
 
@@ -9,6 +9,7 @@
 # You don't need to understand this helper code,
 # but you will have to know how to use the functions
 # (so be sure to read the docstrings!)
+from operator import truediv
 import random
 import string
 
@@ -50,7 +51,6 @@ def choose_word(wordlist):
 # so that it can be accessed from anywhere in the program
 wordlist = load_words()
 
-
 def is_word_guessed(secret_word, letters_guessed):
     '''
     secret_word: string, the word the user is guessing; assumes all letters are
@@ -60,10 +60,11 @@ def is_word_guessed(secret_word, letters_guessed):
     returns: boolean, True if all the letters of secret_word are in letters_guessed;
       False otherwise
     '''
-    # FILL IN YOUR CODE HERE AND DELETE "pass"
-    pass
-
-
+    chars = list(secret_word)
+    if letters_guessed == chars:
+      return True
+    else:
+      return False
 
 def get_guessed_word(secret_word, letters_guessed):
     '''
